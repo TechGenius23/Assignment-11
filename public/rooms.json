@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Deluxe Suite",
+    "image": "https://i.ibb.co.com/nfWvnm3/OIP.jpg",
+    "description": "A luxurious room with a king-size bed, balcony, and sea view.",
+    "price": 200,
+    "roomSize": "450 sq. ft.",
+    "availability": true,
+    "specialOffers": "20% off for stays longer than 3 nights"
+  },
+  {
+    "id": 2,
+    "name": "Standard Room",
+    "image": "https://i.ibb.co.com/NnC8yQg/R-1.jpg",
+    "description": "A cozy room with all standard amenities.",
+    "price": 100,
+    "roomSize": "300 sq. ft.",
+    "availability": false,
+    "specialOffers": null
+  },
+  {
+    "id": 3,
+    "name": "Family Room",
+    "image": "https://i.ibb.co.com/3fT5jqK/OIP-3.jpg",
+    "description": "Spacious room with multiple beds, perfect for families.",
+    "price": 150,
+    "roomSize": "600 sq. ft.",
+    "availability": true,
+    "specialOffers": "Free breakfast for children under 12"
+  },
+  {
+    "id": 4,
+    "name": "Executive Suite",
+    "image": "https://i.ibb.co.com/MCLc2CS/OIP-4.jpg",
+    "description": "Perfect for business travelers, featuring a work desk and high-speed internet.",
+    "price": 250,
+    "roomSize": "500 sq. ft.",
+    "availability": true,
+    "specialOffers": null
+  },
+  {
+    "id": 5,
+    "name": "Economy Room",
+    "image": "https://i.ibb.co.com/169K3kT/OIP-5.jpg",
+    "description": "Budget-friendly room with essential facilities.",
+    "price": 80,
+    "roomSize": "200 sq. ft.",
+    "availability": false,
+    "specialOffers": "10% off for first-time guests"
+  },
+  {
+    "id": 6,
+    "name": "Luxury Villa",
+    "image": "https://i.ibb.co.com/JvpMdZD/R-2.jpg",
+    "description": "Private villa with pool and garden view.",
+    "price": 500,
+    "roomSize": "1200 sq. ft.",
+    "availability": true,
+    "specialOffers": "Complimentary dinner for two"
+  },
+  {
+    "id": 7,
+    "name": "Single Room",
+    "image": "https://i.ibb.co.com/2P75gkg/R-3.jpg",
+    "description": "Compact room perfect for solo travelers.",
+    "price": 90,
+    "roomSize": "250 sq. ft.",
+    "availability": true,
+    "specialOffers": null
+  },
+  {
+    "id": 8,
+    "name": "Penthouse Suite",
+    "image": "https://i.ibb.co.com/gmX5CD9/OIP-1.jpg",
+    "description": "Luxurious penthouse with panoramic city views.",
+    "price": 800,
+    "roomSize": "1500 sq. ft.",
+    "availability": false,
+    "specialOffers": "Free spa access"
+  },
+  {
+    "id": 9,
+    "name": "Garden View Room",
+    "image": "https://i.ibb.co.com/MCLc2CS/OIP-4.jpg",
+    "description": "Relaxing room with a scenic garden view.",
+    "price": 120,
+    "roomSize": "350 sq. ft.",
+    "availability": true,
+    "specialOffers": null
+  }
+]
