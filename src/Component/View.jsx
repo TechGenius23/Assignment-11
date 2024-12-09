@@ -14,7 +14,7 @@ const View = () => {
                 roomSize: sin.roomSize,
                 price: sin.price,
                 availability: sin.availability,
-                image: sin.image, // Include the image
+                image: sin.image,
             };
     
             fetch('http://localhost:5000/bookings', {

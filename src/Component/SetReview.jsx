@@ -9,7 +9,7 @@ const SetReview = () => {
         const alldata = { name, rating, description };
         console.log(alldata);
 
-        // Correcting the fetch syntax
+     
         fetch('http://localhost:5000/user', {
             method: 'POST',
             headers: {
@@ -17,7 +17,7 @@ const SetReview = () => {
             },
             body: JSON.stringify(alldata),
         })
-            .then((res) => res.json()) // Call `res.json()` function correctly
+            .then((res) => res.json())
             .then((data) => {
                 console.log('Response from server:', data);
                 alert('Data saved successfully!');

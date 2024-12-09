@@ -18,8 +18,8 @@ const Login = () => {
 
         .then((result) => {
             console.log("Login successful", result.user);
-            // Navigate to the dashboard after successful login
-            navigate("/home");
+           
+            // navigate("/home");
         })
         .catch((error) => {
             console.error("Login failed", error);
