@@ -43,8 +43,8 @@ const Navber = () => {
                 <ul className="menu menu-horizontal px-1">
                     <NavLink to={'/home'}><li className="font-bold text-2xl"><a>Home</a></li></NavLink>
                     <NavLink to={'/rooms'}> <li className="font-bold"><a>Rooms</a></li></NavLink>
-                    <NavLink to={'/booked'}><li className="font-bold"><a>My Room</a></li></NavLink>
-                    <NavLink to={'/review'}> <li className="font-bold"><a>Your Review</a></li></NavLink>
+                    <NavLink to={'/booked'}><li className="font-bold"><a>Our Review</a></li></NavLink>
+                    <NavLink to={'/review'}> <li className="font-bold"><a>My Room</a></li></NavLink>
                     <NavLink to={'/contract'}><li className="font-bold"><a>Contract</a></li></NavLink>
                     <NavLink to={'/feature'}><li className="font-bold"><a>Feature Rooms</a></li></NavLink>
                     {/* <NavLink to={'/update'}><li className="font-bold"><a>Home Decors</a></li></NavLink> */}

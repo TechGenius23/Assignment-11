@@ -21,6 +21,8 @@ import Roomsmap from './Component/Roomsmap';
 import FirebaseProvider from './Component/FirebaseProvider'
 import Error from './Component/Error';
 import View from './Component/View';
+import BeforeRead from './Component/BeforeRead';
+import BeforeRoom from './Component/BeforeRoom';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -58,7 +60,18 @@ const router = createBrowserRouter([
       },
       {
         path: '/booked',
-        element: <MyRoom></MyRoom>
+        element: <MyRoom></MyRoom>,
+        
+      },
+      {
+        path:'beforeread',
+        element:<BeforeRead></BeforeRead>,
+        loader:()=>fetch('http://localhost:5000/user')
+      },
+      {
+        path:'beforeroom',
+        element:<BeforeRoom></BeforeRoom>,
+        loader:()=>fetch('http://localhost:5000/bookings')
       },
       {
         path: '/review',

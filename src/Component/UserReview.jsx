@@ -1,75 +1,72 @@
-
+import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const UserReview = () => {
+    const [rooms, setRooms] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/bookings')
+            .then((res) => res.json())
+            .then((data) => setRooms(data));
+    }, []);
+
+    const handleDelete = (id) => {
+        const confirm = window.confirm("Are you sure you want to delete this room?");
+        if (confirm) {
+            fetch(`http://localhost:5000/bookings/${id}`, {
+                method: 'DELETE',
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.success) {
+                        alert("Room deleted successfully");
+                        setRooms(rooms.filter((room) => room._id !== id));
+                    } else {
+                        alert("Failed to delete room");
+                    }
+                })
+                .catch((error) => console.error("Delete Error:", error));
+        }
+    };
+
     return (
-        <div>
-            <section className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
-                <div className="container p-6 mx-auto space-y-8">
-                    <div className="space-y-2 text-center">
-                        <h2 className="text-3xl font-bold">Customer Review part</h2>
-                        <p className="font-serif text-sm dark:text-gray-600">Customer can review there experience</p>
-                    </div>
-                    <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-                        <article className="flex flex-col dark:bg-gray-50">
-                            <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-                                <img alt="" className="object-cover rounded-lg w-full h-52 dark:bg-gray-500" src="https://i.ibb.co.com/nfWvnm3/OIP.jpg" />
-                            </a>
-                            <div className="flex flex-col flex-1 p-6">
-                                <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
-                                <a rel="noopener noreferrer" href="#" className="text-xs tracking-wider uppercase hover:underline dark:text-violet-600">Single Room</a>
-                                <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
-                                <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
-                                    <span>June 1, 2020</span>
-                                    <span>2.1K views</span>
+        <>
+            <div className="grid grid-cols-3 gap-4">
+                {rooms?.map((room) => {
+                    const { _id, roomSize, availability, price, image } = room;
+
+                    return (
+                        <div key={_id}>
+                            <div className="card bg-primary text-primary-content w-96">
+                                <div className="card-body">
+                                    <figure>
+                                        <img src={image} className="w-full h-48 object-cover" alt="Room" />
+                                    </figure>
+                                    <h2 className="card-title">{roomSize}</h2>
+                                    <p>Availability: {availability}</p>
+                                    <p>Price: {price}</p>
+                                    <div className="flex justify-between">
+                                        <button
+                                            className="btn btn-danger"
+                                            onClick={() => handleDelete(_id)}
+                                        >
+                                            Cancel
+                                        </button>
+                                        <NavLink to={'/rooms'}>
+                                            <button className="btn">Choose Another One</button>
+                                        </NavLink>
+                                    </div>
                                 </div>
                             </div>
-                        </article>
-                        <article className="flex flex-col dark:bg-gray-50">
-                            <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-                                <img alt="" className="object-cover rounded-lg w-full h-52 dark:bg-gray-500" src="https://i.ibb.co.com/NnC8yQg/R-1.jpg" />
-                            </a>
-                            <div className="flex flex-col flex-1 p-6">
-                                <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
-                                <a rel="noopener noreferrer" href="#" className="text-xs tracking-wider uppercase hover:underline dark:text-violet-600">Convenire</a>
-                                <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
-                                <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
-                                    <span>June 2, 2020</span>
-                                    <span>2.2K views</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article className="flex flex-col dark:bg-gray-50">
-                            <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-                                <img alt="" className="object-cover rounded-lg w-full h-52 dark:bg-gray-500" src="https://i.ibb.co.com/MCLc2CS/OIP-4.jpg" />
-                            </a>
-                            <div className="flex flex-col flex-1 p-6">
-                                <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
-                                <a rel="noopener noreferrer" href="#" className="text-xs tracking-wider uppercase hover:underline dark:text-violet-600">Convenire</a>
-                                <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
-                                <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
-                                    <span>June 3, 2020</span>
-                                    <span>2.3K views</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article className="flex flex-col dark:bg-gray-50">
-                            <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum">
-                                <img alt="" className="object-cover rounded-lg w-full h-52 dark:bg-gray-500" src="https://i.ibb.co.com/169K3kT/OIP-5.jpg" />
-                            </a>
-                            <div className="flex flex-col flex-1 p-6">
-                                <a rel="noopener noreferrer" href="#" aria-label="Te nulla oportere reprimique his dolorum"></a>
-                                <a rel="noopener noreferrer" href="#" className="text-xs tracking-wider uppercase hover:underline dark:text-violet-600">Convenire</a>
-                                <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
-                                <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600">
-                                    <span>June 4, 2020</span>
-                                    <span>2.4K views</span>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-        </div>
+                        </div>
+                    );
+                })}
+            </div>
+
+            <div>
+                <p className="text-red-500 font-bold text-2xl">Total Rooms: {rooms.length}</p>
+            </div>
+        </>
     );
 };
 
