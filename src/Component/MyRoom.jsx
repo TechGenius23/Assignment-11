@@ -1,9 +1,15 @@
+import SetReview from "./SetReview";
 
 
 const MyRoom = () => {
     return (
         <div>
-            <h1>thats my all room</h1>
+            <div>
+                <p>i am from my room</p>
+            </div>
+            <div>
+                <SetReview></SetReview>
+            </div>
         </div>
     );
 };

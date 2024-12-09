@@ -6,22 +6,22 @@ const Banner = () => {
             <div className="carousel w-full h-80 rounded-xl">
                 <div id="item1" className="carousel-item w-full">
                     <img
-                        src="https://i.ibb.co.com/xLjdTYW/8fb790610bc7ff25591155d83e61f6ed.jpg"
+                        src="https://i.ibb.co.com/Yc0YBvd/ba.jpg"
                         className="w-full" />
                 </div>
                 <div id="item2" className="carousel-item w-full">
                     <img
-                        src="https://i.ibb.co.com/tQB8h04/OIP-5.jpg"
+                        src="https://i.ibb.co.com/tX0WxL5/Hotel-Bristol-top-1024x538.jpg"
                         className="w-full" />
                 </div>
                 <div id="item3" className="carousel-item w-full">
                     <img
-                        src="https://i.ibb.co.com/bQs8LkV/OIP-4.jpg"
+                        src="https://i.ibb.co.com/j6j4wdp/OIP-1.jpg"
                         className="w-full" />
                 </div>
                 <div id="item4" className="carousel-item w-full">
                     <img
-                        src="https://i.ibb.co.com/YWFQ9t9/OIP-3.jpg"
+                        src="https://i.ibb.co.com/6nMpy4d/R-3.jpg"
                         className="w-full" />
                 </div>
             </div>

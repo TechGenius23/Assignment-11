@@ -10,6 +10,7 @@ const Roomsmap = () => {
         {
             datas?.map((info)=><Rooms key={info.id} data={info}></Rooms>)
         },
+        
        </div>
     );
 };

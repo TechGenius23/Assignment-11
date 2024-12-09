@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { NavLink, useLoaderData, useParams } from "react-router-dom";
 
 
 const View = () => {
@@ -23,7 +23,9 @@ const View = () => {
                     <p>Price per night:{sin.price}</p>
                     <p>{sin.availability}</p>
                     <p>{sin.specialOffers}</p>
+                    
                 </div>
+                <NavLink to={'/booked'}><button className="btn btn-secondary">Book this room</button></NavLink>
             </div>
         </div>
     );
